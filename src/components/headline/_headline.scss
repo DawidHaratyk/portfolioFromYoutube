@@ -1,0 +1,49 @@
+.headline {
+    position: relative;
+    margin-bottom: 50px;
+
+    &__text {
+        color: white;
+        text-transform: uppercase;
+        font-size: 29px;
+    }
+
+    &__line {
+        display: block;
+        position: relative;
+        width: 70px;
+        height: 5px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 3px;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: var(--main-blue-color);
+        }
+
+        &::after {
+            background-color: rgb(46, 46, 109);
+            top: 0;
+            left: 50%;
+        }
+    }
+
+    &__shadow {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        font-size: 55px;
+        text-transform: uppercase;
+        opacity: 0.1;
+        font-weight: 700;
+        color: rgb(110, 106, 106);
+    }
+}

@@ -1,0 +1,42 @@
+.blogs {
+    margin-left: clamp(240px, 16%, 16%);
+    padding: 70px;
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--font-color);
+
+    @media (max-width: 800px) {
+        margin-left: 0;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__item {
+        width: 30%;
+        margin: 10px;
+        padding: 12px;
+        background-color: var(--sidebar);
+
+        @media (max-width: 1200px) {
+            width: 45%;
+        }
+
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+
+        &-image {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &-headline {
+            font-weight: 500;
+            margin: 15px 0 10px 0;
+        }
+    }
+}

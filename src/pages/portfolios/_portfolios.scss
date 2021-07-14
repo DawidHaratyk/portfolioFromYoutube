@@ -1,0 +1,120 @@
+@keyframes moveLink {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    69% {
+        display: none;
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    70% {
+        display: block;
+        transform: translateY(20px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.portfolio {
+    margin-left: clamp(240px, 16%, 16%);
+    padding: 70px;
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--font-color);
+
+    @media (max-width: 800px) {
+        margin-left: 0;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
+    &__image-container {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: "";
+            display: block;
+            background-color: white;
+            width: 0;
+            height: 0;
+            z-index: 1;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        &:hover::after {
+            width: 90%;
+            height: 90%;
+            opacity: 1;
+        }
+
+        &:hover .portfolio__item-li {
+            display: block;
+            transform: translateY(0);
+        }
+    }
+
+    &__item {
+        width: 32%;
+        margin-bottom: 25px;
+        padding: 0 5px;
+
+        @media (max-width: 1000px) {
+            width: 49%;
+        }
+
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+
+        &-image {
+            width: 100%;
+            height: 28vh;
+            object-fit: cover;
+        }
+
+        &-headline {
+            font-size: 19px;
+        }
+
+        &-text {
+            font-size: 15px;
+        }
+
+        &-links-list {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        &-li {
+            display: none;
+            transform: translateY(20px);
+            animation: moveLink 0.6s linear 1;
+            list-style: none;
+        }
+
+        &-link {
+            padding: 10px;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            background-color: var(--main-blue-color);
+            border-radius: 6px;
+        }
+    }
+}

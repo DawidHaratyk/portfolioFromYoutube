@@ -1,0 +1,15 @@
+.line {
+    width: 70%;
+    height: 6px;
+    background-color: var(--sidebar);
+    border-radius: 5px;
+    margin-left: 10px;
+    overflow: hidden;
+
+    &__amount {
+        display: block;
+        background-color: var(--main-blue-color);
+        height: 100%;
+        border-radius: 5px;
+    }
+}
