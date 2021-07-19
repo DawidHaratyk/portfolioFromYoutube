@@ -1,7 +1,6 @@
 import React from "react";
 
 function PortfolioBtn({ data, click }) {
-  console.log("render portfoliobtn");
   const buttonsList = data.map((item) => (
     <button
       className={`portfolio__btn ${item.selected ? "active" : ""}`}

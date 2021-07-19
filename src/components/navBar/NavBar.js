@@ -13,7 +13,10 @@ function NavBar() {
       key={item.name}
       className="menu__link"
       activeClassName="active-link"
-      onClick={() => setIsSidebarActive(false)}
+      onClick={() => {
+        setIsSidebarActive(false);
+        window.scrollTo(0, 0);
+      }}
     >
       {item.name}
     </NavLink>
@@ -29,7 +32,10 @@ function NavBar() {
   useEffect(() => {
     checkWebsiteWidth();
     window.addEventListener("resize", checkWebsiteWidth);
-  }, []);
+    return () => {
+      window.removeEventListener("resize", checkWebsiteWidth);
+    };
+  }, [websiteWidth]);
 
   const handleMenuToggle = () => {
     setIsSidebarActive(!isSidebarActive);
